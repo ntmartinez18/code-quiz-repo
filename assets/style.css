@@ -5,19 +5,22 @@
     text-align: center;
 }
 
+/* created class to style header element */
 .header {
     margin-top: 50px;
     margin-bottom: 50px;
     font-size: 25px;
 }
 
+/* created content class to style main content */
 .content {
     margin-top: 15px;
     margin-bottom: 15px;
     font-size: 20px;
 }
 
-#button {
+/* created id to style the start button */
+#start-button {
     border: none;
     background-color: blue;
     color: aliceblue;
