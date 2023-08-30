@@ -14,11 +14,21 @@
             <h1>Code Quiz</h1>
         </header>
     </section>
-    
+    </section>
     <section class="content">
         <!-- created content section and button element to launch quiz -->
+        <h2 id="timer">60s</h2>
         <p>Test your coding knowledge by taking the following quiz!</p>
         <button type="button" id="start-button">Start Quiz</button>
+    </section>
+    <section class="hide">
+        <!-- created hidden section for questions and answer to be rendered after start button is pressed -->
+        <div id="question-container" class="hide"></div>
+        <button type="button" id="answer-button" class="hide">Answer 1</button>
+        <button type="button" id="answer-button" class="hide">Answer 2</button>
+        <button type="button" id="answer-button" class="hide">Answer 3</button>
+        <button type="button" id="answer-button" class="hide">Answer 4</button>
+        <button type="button" id="next-button" class="hide">Next Question</button>
     </section>
     <script src="./assets/script.js"></script>
 </body>

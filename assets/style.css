@@ -1,4 +1,4 @@
-* {
+*, ::before, ::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -19,8 +19,15 @@
     font-size: 20px;
 }
 
-/* created id to style the start button */
-#start-button {
+/* created id to style the timer element */
+#timer {
+    padding-bottom: 40px;
+}
+
+/* created id to style the start button, next button, and answer buttons */
+#start-button, 
+#next-button,
+#answer-button {
     border: none;
     background-color: blue;
     color: aliceblue;
@@ -32,4 +39,8 @@
     padding: 10px 24px;
     text-align: center;
     cursor: pointer;
+}
+
+.hide {
+    display: none;
 }
