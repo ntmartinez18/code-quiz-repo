@@ -18,12 +18,14 @@
     <section class="content">
         <!-- created content section and button element to launch quiz -->
         <h2 id="timer">60s</h2>
-        <p>Test your coding knowledge by taking the following quiz!</p>
+        <p id="start-screen">Test your coding knowledge by taking the following quiz!</p>
+        <p id="score" class="hide">0</p>
+        <p id="question-container" class="hide">Questions</p>
         <button type="button" id="start-button" class="show">Start Quiz</button>
     </section>
     <section class="hide">
         <!-- created hidden section for questions and answer to be rendered after start button is pressed -->
-        <div id="question-container" class="hide"></div>
+        <div class="hide"></div>
         <button type="button" id="answer-button" class="hide">Answer 1</button>
         <button type="button" id="answer-button" class="hide">Answer 2</button>
         <button type="button" id="answer-button" class="hide">Answer 3</button>

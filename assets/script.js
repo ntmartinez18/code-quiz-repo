@@ -3,12 +3,15 @@ const startButton = document.getElementById("start-button");
 const nextButton = document.getElementById("next-button");
 var answerButton = document.querySelectorAll("#answer-button");
 var timerElement = document.getElementById("timer");
-
+var questionElement = document.getElementById("question-container");
+var startScreen = document.getElementById("start-screen")
 
 var count = 60;
 var score = 0;
+var index = 0;
 var timer;
 var timerCount;
+var currentQuestion;
 var chosenQuestion = "";
 var userResponse = "";
 
@@ -29,15 +32,18 @@ startButton.addEventListener("click", startGame);
 function startGame() {
     console.log("started")
     timerCount = 60;
-    startButton.classList.add("hide")
+    currentQuestion = 0;
+    startButton.setAttribute("style", "display: none")
+    startScreen.setAttribute("style", "display: none")
     renderQuestions()
     renderResponses()
     startCountDown()
+    checkResponse()
 };
 
 // created function to run when the game is over
 function gameOver() {
-    startButton.classList.add("show")
+    startButton.setAttribute("style", "display: inline")
     displayScore;
 };
 
@@ -57,27 +63,48 @@ function startCountDown() {
 
 // creates questions that will be rendered on screen
 function renderQuestions() {
-    console.log("Questions are being rendered")
-    chosenQuestion = questions[Math.floor(Math.random() * questions.length)];
+    console.log("Questions are being rendered")}
+    // Navigate through list of questions
+  function navigate(direction) {
+    index = index + direction;
+    // If you try to navigate 'back' from the start
+    // Go to last question
+    if (index < 0) { 
+      index = questions.length - 1; 
+    questionElement.textContent = questions[index].questions
+    // currentQuestion = questions[""];
+    // chosenQuestion = questions[Math.floor(Math.random() * questions.length)];
+    // for (var i=0; i < questions.length; i++) {
+    // }
+    // questionElement = setAttribute("style", "display: inline");
+    }
 };
 
 // created function for response options to be rendered to page
 function renderResponses() {
-    console.log("Responses are being rendered")
-    nextButton.classList.add("show")
+    console.log("Responses are being rendered");
+    // answerButton.setAttribute("style", "display: inline");
+};
+
+// created function to check if user response is correct/incorrect
+function checkResponse() {
+    console.log("response is checked");
+        if (userResponse == questions[index].answer) {
+        score += 25;
+    } else if (userResponse !== questions[index].answer) {
+        timerCount-10;
+    }
 };
 
 
 
 
 
-// function Navigate
+// check what is clicked on and make sure its a button 
+// check what answer is clicked and then compare it to the right answer
+// if correct
+// call navigate function
 
-
-// function setNext() {
-
-// };
-
-// function selectAnswer() {
-
-// };
+// navigate (0);
+// nextButton.addEventListener("click", function(event)) {
+//     event.stopPropagation();
