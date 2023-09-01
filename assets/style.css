@@ -27,7 +27,8 @@
 /* created id to style the start button, next button, and answer buttons */
 #start-button, 
 #next-button,
-#answer-button {
+#answer-button,
+#back-button {
     border: none;
     background-color: blue;
     color: aliceblue;
@@ -47,4 +48,8 @@
 
 .show {
     display: block
+}
+
+#back-button a {
+    color: aliceblue;
 }

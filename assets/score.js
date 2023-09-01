@@ -1,3 +1,20 @@
-// create for loop of scores and create ul with id and then create lis and the do scores of i .initals and scpace .scores of i .scores
+// created array to get the highscore value from local storage 
+var users = JSON.parse(localStorage.getItem("highscores"))
+  
+  // Get the unordered list element
+  var userList = document.getElementById("userList");
+  
+  // created function to iterate over the users array
+  for (var i = 0; i < users.length; i++) {
+    // Create a list item element
+    var listItem = document.createElement("li");
+  
+    // Set the text content of the list item to include the score and initials
+    listItem.textContent = "Score: " + users[i].score + " | Initials: " + users[i].initials;
+  
+    // Append the list item to the unordered list
+    userList.appendChild(listItem);
 
-var scores = JSON.parse(localStorage.getItem("highscores")) || []
+    users.sort(function(a, b) {
+        return b - a;
+      });};

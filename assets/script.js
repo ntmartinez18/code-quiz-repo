@@ -79,7 +79,7 @@ function renderQuestions() {
       console.log(questions[index].responses[i]);
       var btn = document.createElement("button")
       btn.textContent = questions[index].responses[i];
-      btn.setAttribute("class", "answer-button")
+      btn.setAttribute("id", "answer-button")
     answerButton.append(btn);
     }
 }
@@ -88,16 +88,17 @@ function renderQuestions() {
 function checkResponse(userResponse) {
     console.log("response is checked");
         if (userResponse == questions[index].answer) {
-        score += 25;
+        score += 20;
         index++
         renderQuestions()
     } else {
-        timerCount-10;
+        timerCount = timerCount-10;
         index++
         renderQuestions()
     }
 };
 
+// created function to store initials and score of user
 function storage(initials) {
     if (initials !== ""){
         userArray = JSON.parse(localStorage.getItem("highscores")) || []
