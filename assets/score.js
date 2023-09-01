@@ -14,6 +14,7 @@ var users = JSON.parse(localStorage.getItem("highscores"))
   
     // Append the list item to the unordered list
     userList.appendChild(listItem);
+    userList.setAttribute("class", "content");
 
     users.sort(function(a, b) {
         return b - a;

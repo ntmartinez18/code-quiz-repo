@@ -81,8 +81,9 @@ function renderQuestions() {
       btn.textContent = questions[index].responses[i];
       btn.setAttribute("id", "answer-button")
     answerButton.append(btn);
+    questionContainer.setAttribute("class", "content");
     }
-}
+};
 
 // created function to check if user response is correct/incorrect
 function checkResponse(userResponse) {
@@ -112,12 +113,16 @@ function storage(initials) {
     }
 };
 
+// added event listener to check response
 answerButton.addEventListener("click", ()=>{
     var userChoice = this.event.target.textContent
     checkResponse(userChoice);
-})
+    }
+);
 
+// added event listener to fire when the submit button is clicked
 submitbtn.addEventListener("click", ()=>{
     var userInitials = userInput.value
     storage(userInitials)
-} )
+    } 
+);
